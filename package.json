@@ -1,0 +1,24 @@
+{
+  "name": "simple-ftpd",
+  "version": "0.0.1",
+  "description": "simple ftp server",
+  "main": "index.js",
+  "repository": {},
+  "author": "Valerio Proietti <kamicane@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "ftp-server": "./ftp-server"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "async-sequence": "^2.0.3",
+    "commander": "^2.9.0",
+    "fs-extra": "^2.0.0",
+    "moment": "^2.17.1",
+    "pump": "^1.0.2",
+    "sprintf": "^0.1.5",
+    "stat-mode": "^0.2.2"
+  }
+}
