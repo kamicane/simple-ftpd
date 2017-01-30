@@ -106,6 +106,9 @@ Instead of options, you can pass `${host}:${port}` (`"192.168.1.10:1337"`).
 
 Every event gets some arguments and a node-style callback you must call with an Error object (if any) and results.
 
+If you do not listen to a specific event, then that feature will become unavailable to the client.
+For example, if you do not listen to `write` events, the client will get a 502 error when trying to write files.
+
 ### `pass [username, password, cb]`
 
 The client wants to login with `username` and `password`.
