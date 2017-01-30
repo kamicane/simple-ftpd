@@ -84,19 +84,13 @@ ftpd({ host: '127.0.0.1', port: 1337, root: '/public/files' }, (session) => {
 
 ## Options
 
-- `host`:
-Required. Must be a valid ipv4 address (for now). Defaults to `127.0.0.1`
-- `port`:
-Required. Server port. Defaults to `1337`.
-- `readOnly`:
-Optional. Disables client write requests. Defaults to `true`.
-Can be overridden on a connection-basis by setting the readOnly property on the session object before logging in.
-- `root`:
-Optional (recommended). The path passed to events will always be joined to `root`. Can be overridden on a connection-basis by setting the root property on the session object before logging in.
-The ftp client will not see `root`, and will think he's at `/`.
-This is simply a convenience to avoid manually joining the path you get in every event.
-- `maxConnections`:
-Optional. Maximum number of server connections. Defaults to 10.
+| option | | description |
+| --- | --- | --- |
+| `host` | required | Must be a valid ipv4 address (for now). Defaults to `127.0.0.1` |
+| `port` | required | Server port. Defaults to `1337`. |
+| `readOnly` | optional | Disables client write requests. Defaults to `true`. Can be overridden on a connection-basis by setting the readOnly property on the session object before logging in. |
+| `root` | optional | The path passed to events will always be joined to `root`. Can be overridden on a connection-basis by setting the root property on the session object before logging in. The ftp client will not see `root`, and will think he's at `/`. This is simply a convenience to avoid manually joining the path you get in every event. |
+| `maxConnections` | optional | Maximum number of server connections. Defaults to 10. |
 
 Passive connections will be initialized on an unused port assigned by the os.
 
@@ -116,13 +110,11 @@ Will consider the user logged in if no error is passed to `cb()`
 
 User names are always accepted, because (from pyftpdlib):
 
-```py
-# In order to prevent a
-# malicious client from determining valid usernames on a server,
-# it is suggested by RFC-2577 that a server always return 331 to
-# the USER command and then reject the combination of username
-# and password for an invalid username when PASS is provided later.
-```
+> In order to prevent a
+> malicious client from determining valid usernames on a server,
+> it is suggested by RFC-2577 that a server always return 331 to
+> the USER command and then reject the combination of username
+> and password for an invalid username when PASS is provided later.
 
 ### `read [pathName, offset, cb]`:
 
@@ -190,13 +182,13 @@ You can use it like this:
 ftp-server /public/files --host 192.168.0.1 --port 1234 --max-connections 10
 ```
 
-`--host` will default to `127.0.0.1`
-`--port` will default to `1337`
-`--max-connections` will default to `10`
-`--read-only` will default to `true`
-Unless specified, the ftp root will default to `process.cwd()`
+* `--host` will default to `127.0.0.1`
+* `--port` will default to `1337`
+* `--max-connections` will default to `10`
+* `--read-only` will default to `true`
+* Unless specified, the ftp root will default to `process.cwd()`
 
-The cli will accept any login, so be careful when setting --read-only to `false`.
+The cli will accept any login, so be careful when setting `--read-only` to `false`.
 
 ## License
 
