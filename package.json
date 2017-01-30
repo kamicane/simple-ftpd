@@ -1,6 +1,6 @@
 {
   "name": "simple-ftpd",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "simple ftp server",
   "keywords": [
     "ftp server",
