@@ -2,8 +2,9 @@
   "name": "simple-ftpd",
   "version": "0.0.1",
   "description": "simple ftp server",
+  "keywords": ["ftp server", "ftpd", "ftp", "file server"],
   "main": "index.js",
-  "repository": {},
+  "repository": "https://github.com/kamicane/simple-ftpd.git",
   "author": "Valerio Proietti <kamicane@gmail.com>",
   "license": "MIT",
   "bin": {
