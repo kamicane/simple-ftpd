@@ -1,6 +1,6 @@
 # simple-ftpd
 
-`simple-ftpd` is a simple event based ftp-server for node.js.
+`simple-ftpd` is a event based ftp-server for node.js.
 
 ## Features
 
@@ -135,10 +135,6 @@ Requires a writable stream to be passed as `cb(null, writeStream)`.
 the client wants the stats to a file or directory at `pathName`.
 Requires a `fs.stat`-like object to be passed as `cb(null, stat)`.
 
-### `readdir [pathName, cb]`:
-
-The client wants a list of files in the directory `pathName`. requires an array of file names, relative to pathName, to be passed as `cb(null, list)`.
-
 Properties are:
 
 ```js
@@ -155,6 +151,10 @@ Properties are:
   gname: 'admins',
 }
 ```
+
+### `readdir [pathName, cb]`:
+
+The client wants a list of files in the directory `pathName`. requires an array of file names, relative to pathName, to be passed as `cb(null, list)`.
 
 ### `mkdir [pathName, cb]`:
 
