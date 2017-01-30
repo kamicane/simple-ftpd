@@ -52,6 +52,7 @@ const server = ftpd(opts, (session) => {
   session.on('mkdir', fs.mkdir)
   session.on('unlink', fs.unlink)
   session.on('remove', fs.remove)
+  session.on('rename', fs.rename)
 })
 
 server.on('listening', () => {

@@ -77,6 +77,7 @@ ftpd({ host: '127.0.0.1', port: 1337, root: '/public/files' }, (session) => {
 
   session.on('mkdir', fs.mkdir)
   session.on('unlink', fs.unlink)
+  session.on('rename', fs.rename)
   session.on('remove', require('rimraf'))
 })
 ```
@@ -170,6 +171,11 @@ Will consider the file deleted if no error is passed to `cb()`
 
 The client wants to remove a directory, and all of its contents, at `pathName`.
 Will consider the directory and its contents removed if no error is passed to `cb()`
+
+### `rename [fromName, toName, cb]`:
+
+The client wants to rename a file or directory, from `fromName` to `toName`.
+Will consider the file renamed if no error is passed to `cb()`
 
 ## CLI
 
