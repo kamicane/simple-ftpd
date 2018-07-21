@@ -23,7 +23,7 @@ npm install simple-ftpd --save
 ```
 
 ```js
-const ftpd = require('ftpd')
+const ftpd = require('simple-ftpd')
 ```
 
 ## API
@@ -39,7 +39,7 @@ Simple, fs-based ftp server implementation example:
 ```js
 'use strict'
 
-const ftpd = require('ftpd')
+const ftpd = require('simple-ftpd')
 
 ftpd({ host: '127.0.0.1', port: 1337, root: '/public/files' }, (session) => {
 
